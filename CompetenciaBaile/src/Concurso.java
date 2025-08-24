@@ -6,12 +6,15 @@
  */
 
 public class Concurso {
+    // Arreglo para almacenar las calificaciones de los jueces
     private double[] numeros;
 
+    // Constructor: inicializa el arreglo de calificaciones con tamaño 4
     public Concurso() {
         numeros = new double[4];
     }
 
+    // Método para establecer una calificación en una posición específica
     public void estabNumero(int indice, double valor) {
         if (indice >= 0 && indice < numeros.length) {
             numeros[indice] = valor;
@@ -20,6 +23,7 @@ public class Concurso {
         }
     }
 
+    // Método para sumar todas las calificaciones
     public double sumarNumeros() {
         double suma = 0;
         for (double num : numeros) {
@@ -28,6 +32,7 @@ public class Concurso {
         return suma;
     }
 
+    // Método para obtener la calificación más baja
     public double obtenerMenor() {
         double menor = numeros[0];
         for (double num : numeros) {
@@ -38,11 +43,12 @@ public class Concurso {
         return menor;
     }
 
+    // Método para calcular el promedio excluyendo la calificación más baja
     public double sumarExcluyendoMenor() {
-        double suma = sumarNumeros();
-        double menor = obtenerMenor();
-        double sumaComp = suma -= menor;
-        double promedio = sumaComp / 3;
+        double suma = sumarNumeros(); // Suma total de las calificaciones
+        double menor = obtenerMenor(); // Calificación más baja
+        double sumaComp = suma -= menor; // Suma excluyendo la más baja
+        double promedio = sumaComp / 3; // Promedio de las tres calificaciones restantes
         return promedio;
     }
 }

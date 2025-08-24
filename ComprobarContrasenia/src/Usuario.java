@@ -6,9 +6,14 @@
  */
 public class Usuario {
 
+    // Almacena la contraseña válida para el usuario
     private String contrasenia = "Logica2021";
 
+
+    //  Verifica si la contraseña ingresada coincide con la contraseña almacenada.
+    
     public boolean verificarContrasenia(String contraseniaIngresada) {
+        // Compara la contraseña ingresada con la almacenada
         if (contraseniaIngresada.equals(contrasenia)) {
             return true;
         } else {
